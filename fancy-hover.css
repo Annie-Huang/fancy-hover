@@ -1,3 +1,20 @@
+.fancy-hover1 {
+  @media (hover) and (prefers-reduced-motion: no-preference) {
+    & > li {
+      transform-origin: left center;
+      transition:
+        transform 0.3s linear,
+        opacity 0.3s linear;
+    }
+
+    &:has(> li:hover) > li:not(:hover),
+    &:has(> li:focus-within) > li:not(:focus-within) {
+      opacity: 0.25;
+      transform: scale(0.8);
+    }
+  }
+}
+
 .fancy-hover {
   padding: 4rem;
   /*background: hsl(0 100% 100% / 0.2);*/
@@ -8,7 +25,7 @@
       transition: opacity 0.3s linear;
     }
 
-    /* This will change to lighter ink as soon as you hover over the element, e.g. fancy-hover but ouside of the list
+    /* This will change to lighter ink as soon as you hover over the element, e.g. fancy-hover but outside of the list
        Only when you hover on the specific item, that specific item will show dark link again.
      */
     /*&:hover > *:not(:hover) {*/
