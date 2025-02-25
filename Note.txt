@@ -1,0 +1,8 @@
+Create a super fun "focus by negation" effect (https://www.youtube.com/watch?v=ReMCo2hkUAM)
+
+https://nerdy.dev/hover-not-hover-sorry-not-sorry
+https://codepen.io/argyleink/pen/ZYzvGaq
+https://github.com/Annie-Huang/fancy-hover
+
+---------------------------------------------------------------
+
