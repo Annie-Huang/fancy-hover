@@ -79,6 +79,26 @@
   );
 }
 
+.fancy-hover2 {
+  @media (hover) and (prefers-reduced-motion: no-preference) {
+    & > li {
+      transform-origin: left center;
+
+      transition:
+        /*transform 0.3s linear,*/
+        /*transform 1s var(--bounce),*/
+        transform 1s var(--lazy),
+        opacity 0.3s linear;
+    }
+
+    &:has(> li:hover) > li:not(:hover),
+    &:has(> li:focus-within) > li:not(:focus-within) {
+      opacity: 0.25;
+      transform: scale(0.8);
+    }
+  }
+}
+
 .fancy-hover1 {
   @media (hover) and (prefers-reduced-motion: no-preference) {
     & > li {
