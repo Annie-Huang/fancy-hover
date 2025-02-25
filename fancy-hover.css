@@ -13,10 +13,16 @@
      */
     /*&:hover > *:not(:hover) {*/
 
+    /* ---------------------------------------------- */
+
     /* this one when you hover on the whole element, e.g. fancy-hover but outside of the list, it will not do anything
        Only when you hover on specific item, others will fade out.
     */
-    &:has(> li:hover) > li:not(:hover) {
+
+    /* for hover */
+    &:has(> li:hover) > li:not(:hover),
+    /* for tab */
+    &:has(> li:focus-within) > li:not(:focus-within) {
       opacity: 0.25;
     }
   }
