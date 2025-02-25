@@ -1,0 +1,21 @@
+{
+  "name": "fancy-hover",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annie-Huang/fancy-hover.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Annie-Huang/fancy-hover/issues"
+  },
+  "homepage": "https://github.com/Annie-Huang/fancy-hover#readme",
+  "description": ""
+}
