@@ -84,6 +84,8 @@
       further items arc more
       further items fade more  */
 
+  /* play with these */
+  --distance-multiplier: 25%;
   --arc: 5deg;
 
   /* Add --target value when user hover on to different <li> element
@@ -119,31 +121,30 @@
 
   @media (hover) and (prefers-reduced-motion: no-preference) {
     & > li {
-      transform-origin: left center;
+      /*transform-origin: left center;*/
+      transform-origin: -20% 50%;
 
       transition:
         /*transform 0.3s linear,*/
         /*transform 1s var(--bounce),*/
-        transform 1s var(--lazy),
+        transform 1s var(--bounce),
         opacity 0.3s linear;
     }
 
     &:has(> li:hover) > li:not(:hover),
     &:has(> li:focus-within) > li:not(:focus-within) {
-      /* play with these */
-      --distance-multiplier: 15%;
-
       /* used for calculation, don't touch */
       --distance-from-target: abs(var(--sibling-index) - var(--target));
-      --distance-multiplier-calculation: calc(
-        var(--distance-from-target) * var(--distance-multiplier)
-      ); /* change 15% */
+      --distance-multiplier-calculation: var(--distance-from-target) *
+        var(--distance-multiplier); /* change 15% */
       --gradual-fadeout: calc(100% - var(--distance-multiplier-calculation));
       --angle: calc((var(--sibling-index) - var(--target)) * var(--arc));
 
       /*opacity: 0.25;*/
       /*transform: scale(0.8);*/
-      opacity: var(--gradual-fadeout);
+      opacity: var(
+        --gradual-fadeout
+      ); /* !!!!! Not sure why i couldn't see the fade.... */
       transform: rotateZ(var(--angle));
     }
   }
