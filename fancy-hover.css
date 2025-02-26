@@ -130,6 +130,16 @@
 
     &:has(> li:hover) > li:not(:hover),
     &:has(> li:focus-within) > li:not(:focus-within) {
+      /* play with these */
+      --distance-multiplier: 15%;
+
+      /* used for calculation, don't touch */
+      --distance-from-target: abs(var(--sibling-index) - var(--target));
+      --distance-multiplier-calculation: var(--distance-from-target) *
+        var(--distance-multiplier); /* change 15% */
+      --gradual-fadeout: calc(100% - var(--distance-multiplier-calculation));
+      --angle: calc((var(--sibling-index) - var(--target)) * var(--arc));
+
       opacity: 0.25;
       transform: scale(0.8);
     }
